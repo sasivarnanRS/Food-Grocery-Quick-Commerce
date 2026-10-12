@@ -1,0 +1,16 @@
+{
+  "name": "@quickcommerce/database",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -b"
+  },
+  "dependencies": {
+    "@quickcommerce/shared-types": "*",
+    "mongoose": "^8.10.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}

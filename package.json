@@ -1,0 +1,30 @@
+{
+  "name": "quickcommerce-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Production-grade Full-Stack Food & Grocery Quick-Commerce Platform",
+  "workspaces": [
+    "packages/*",
+    "services/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "dev:gateway": "npm --workspace=services/api-gateway run dev",
+    "dev:services": "npm run dev --workspaces --if-present",
+    "dev:web": "npm --workspace=apps/web run dev",
+    "dev": "npm run start:all",
+    "start:all": "tsx infrastructure/dev-runner.ts",
+    "start:scaled": "tsx infrastructure/dev-runner.ts --scaled",
+    "seed": "tsx infrastructure/seed/seed.ts",
+    "test": "vitest run",
+    "test:concurrency": "vitest run tests/integration/inventory-concurrency.test.ts",
+    "test:all": "vitest run tests/integration"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.7"
+  }
+}

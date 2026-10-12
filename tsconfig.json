@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@quickcommerce/shared-types": ["packages/shared-types/src/index.ts"],
+      "@quickcommerce/event-schemas": ["packages/event-schemas/src/index.ts"],
+      "@quickcommerce/shared-utils": ["packages/shared-utils/src/index.ts"],
+      "@quickcommerce/database": ["packages/database/src/index.ts"]
+    }
+  },
+  "include": [
+    "infrastructure/**/*",
+    "tests/**/*"
+  ]
+}
